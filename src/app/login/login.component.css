@@ -1,0 +1,16 @@
+.container
+{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ng-star-inserted{
+    width:100%;
+}
+
+.mat-mdc-card-title{
+    margin: auto;
+}

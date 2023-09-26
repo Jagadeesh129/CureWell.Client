@@ -1,0 +1,21 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Update Doctor</mat-card-title>
+        <mat-card-content>
+            <form class="example-form" [formGroup]="updateForm"  (ngSubmit)="UpdateDoctor()">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Doctor Id</mat-label>
+                    <input matInput formControlName="doctorId">
+                  </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Doctor Name</mat-label>
+                  <input matInput   formControlName="doctorName">
+                </mat-form-field>
+                <div>
+                  <button mat-raised-button type="submit" color="primary">Update</button>
+                  <a mat-raised-button style="margin:5px" color="accent" (click)="ClosePop()">Close</a>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

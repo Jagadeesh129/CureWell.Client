@@ -1,0 +1,19 @@
+.container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+form{
+    width:600px;
+}
+
+.ng-star-inserted{
+    width:100%;
+}
+
+.mat-mdc-card-title{
+    margin: auto;
+}
