@@ -14,7 +14,7 @@ export class AppComponent implements DoCheck {
 
    ngDoCheck():void{
     const currentRoute=this.router.url;
-    if(currentRoute=='/access/register' || currentRoute=='/login'){
+    if(currentRoute=='/access/register' || currentRoute=='/'){
       this.isMenuVisible=false;
     }
     else{
@@ -26,7 +26,7 @@ export class AppComponent implements DoCheck {
     alertify.confirm("Are sure U want to Logout",()=>{
       console.log("logout");
       localStorage.clear();
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/');
     },function(){})
   }
 }

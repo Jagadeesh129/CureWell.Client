@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"surgery",component:SurgeryComponent,canActivate:[authGuard]},
   {path:"specialization",component:SpecializationComponent,canActivate:[authGuard]},
   {path:"access",loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
-  {path:"login",component:LoginComponent},
+  {path:"",component:LoginComponent},
   {path:"**",component:ErrorhandlerComponent},
 ];
 

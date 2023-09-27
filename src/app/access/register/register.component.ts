@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   responsedata:any;
 
   RedirectLogin(){
-    this.router.navigate(['login']);
+    this.router.navigate(['/']);
   }
 
   reactiveForm = new FormGroup({

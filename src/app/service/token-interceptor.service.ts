@@ -18,28 +18,14 @@ export class TokenInterceptorService implements HttpInterceptor {
       catchError(errordata=>{
         if(errordata.status===401){
             // authService.Logout();
-             return this.handleRefrehToken(request, next);
+            authService.Logout();
+          return throwError(errordata);
         }
         return throwError(errordata);
       })
     );
   }
-
-  handleRefrehToken(request: HttpRequest<any>, next: HttpHandler) {
-    let authservice = this.inject.get(UserService);
-    return authservice.GenerateRefreshToken().pipe(
-      switchMap((data: any) => {
-        authservice.SaveToken(data);
-        return next.handle(this.AddTokenHeader(request,data.token))
-      }),
-      catchError(errodata=>{
-        authservice.Logout();
-        return throwError(errodata)
-      })
-    );
-  }
-
-
+  
   AddTokenHeader(request:HttpRequest<any>,token:any){
     return request.clone({headers:request.headers.set('Authorization','bearer '+token)});
   }
