@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { SpecializationComponent } from './specialization/specialization.component';
-import { SurgeryComponent } from './surgery/surgery.component';
+import { SpecializationComponent } from './specialization/display-specialization/specialization.component';
+import { SurgeryComponent } from './surgery/display-surgery/surgery.component';
 import { ShowDataComponent } from './doctor/DisplayDoctor/show-data.component';
 import { AddDataComponent } from './doctor/addDoctor/add-data.component';
 import { LoginComponent } from './login/login.component';
@@ -24,8 +24,11 @@ import { UpdateDoctorComponent } from './doctor/update-doctor/update-doctor.comp
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SpecializationDoctorsComponent } from './specialization-doctors/specialization-doctors.component';
-import { UpdateSurgeryComponent } from './update-surgery/update-surgery.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import { UpdateSurgeryComponent } from './surgery/update-surgery/update-surgery.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AddSpecializationComponent } from './specialization/add-specialization/add-specialization.component';
+import { AddSurgeryComponent } from './surgery/add-surgery/add-surgery.component';
+import { DeleteSpecializationComponent } from './specialization/delete-specialization/delete-specialization.component'
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
     ErrorhandlerComponent,
     UpdateDoctorComponent,
     SpecializationDoctorsComponent,
-    UpdateSurgeryComponent
+    UpdateSurgeryComponent,
+    AddSpecializationComponent,
+    AddSurgeryComponent,
+    DeleteSpecializationComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { DoctorService } from 'src/app/service/doctor.service';
 import * as alertify from 'alertifyjs';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateDoctorComponent } from '../update-doctor/update-doctor.component';
+import { AddDataComponent } from '../addDoctor/add-data.component';
 
 @Component({
   selector: 'app-show-data',
@@ -45,8 +46,20 @@ export class ShowDataComponent implements OnInit{
     })
   }
 
+  Add(){
+    var popUp = this.dailog.open(AddDataComponent,{
+      width:'400px',
+      height:'400px',
+      exitAnimationDuration:"1000ms",
+      enterAnimationDuration:"1000ms",
+    })
+    popUp.afterClosed().subscribe(item=>{
+      this.GetAll();
+    })
+  }
+
   Delete(id:any){
-    alertify.confirm("Remove User","Do you want remove this Doctor?",()=>{
+    alertify.confirm("Remove Doctor","If you remove this Doctor then Surgeries related to this doctor are deleted Okay?",()=>{
       this.service.RemoveDoctor(id).subscribe(item=>{
         this.GetAll();
         alertify.success("Removed Successfully");

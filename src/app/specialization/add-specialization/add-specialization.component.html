@@ -1,0 +1,24 @@
+<div class="container">
+    <mat-card>
+        <h1>Add new Specialization</h1>
+        <mat-card-content>
+            <form class="example-form" [formGroup]="addForm"  (ngSubmit)="AddSpecialization()">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Specialization Code</mat-label>
+                  <input matInput   formControlName="specializationCode">
+                </mat-form-field>
+                <div *ngIf="addForm.get('specializationCode').hasError('pattern')" >
+                    <p class="text-danger">*must be 3 Capital letters</p>
+                  </div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Specialization Name</mat-label>
+                    <input matInput   formControlName="specializationName">
+                  </mat-form-field>
+                <div>
+                  <button mat-raised-button type="submit" color="primary">Add Specialization</button>
+                  <a mat-raised-button style="margin:5px" color="accent" (click)="Cancel()">Cancel</a>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

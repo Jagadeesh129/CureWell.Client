@@ -32,8 +32,4 @@ export class SpecializationService {
     return this.http.delete(this.apiUrl+'Remove?id='+id);
   }
 
-  GetDoctors(code:any){
-    return this.http.get<DoctorModel>('https://localhost:7007/api/DoctorSpecialization/GetDoctorsByCode?code='+code);
-  }
-
 }

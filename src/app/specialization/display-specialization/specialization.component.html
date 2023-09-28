@@ -1,5 +1,8 @@
 <div style="width:700px;margin:auto" class="mat-elevation-z8">
-    <h1 style="margin-top:50px;">View Specialization</h1>
+  <div class="visual">
+    <h1>View Specializations</h1>
+    <button (click)="Add()">+ADD</button>
+  </div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
     <ng-container matColumnDef="specializationCode">

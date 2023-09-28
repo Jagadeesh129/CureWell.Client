@@ -1,0 +1,34 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Add Surgery</mat-card-title>
+        <mat-card-content>
+            <form class="example-form" [formGroup]="addForm"  (ngSubmit)="Add()">
+                
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Doctor Id</mat-label>
+                    <input matInput formControlName="doctorId">
+                  </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Surgery Date</mat-label>
+                  <input matInput type="date" formControlName="surgeryDate">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Start Time</mat-label>
+                    <input matInput formControlName="startTime">
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>End Time</mat-label>
+                    <input matInput   formControlName="endTime">
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Surgery Category</mat-label>
+                    <input matInput   formControlName="surgeryCategory">
+                  </mat-form-field>
+                <div>
+                  <button mat-raised-button type="submit" color="primary">Add</button>
+                  <a mat-raised-button style="margin:5px" color="accent" (click)="ClosePop()">Close</a>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

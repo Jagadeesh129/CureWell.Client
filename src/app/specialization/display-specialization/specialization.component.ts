@@ -2,11 +2,12 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { UpdateDoctorComponent } from '../doctor/update-doctor/update-doctor.component';
+import { UpdateDoctorComponent } from '../../doctor/update-doctor/update-doctor.component';
 import * as alertify from 'alertifyjs';
-import { SpecializationService } from '../service/specialization.service';
-import { SpecializationModel } from '../model/specializationModel';
-import { SpecializationDoctorsComponent } from '../specialization-doctors/specialization-doctors.component';
+import { SpecializationService } from '../../service/specialization.service';
+import { SpecializationModel } from '../../model/specializationModel';
+import { SpecializationDoctorsComponent } from '../../specialization-doctors/specialization-doctors.component';
+import { AddSpecializationComponent } from '../add-specialization/add-specialization.component';
 
 @Component({
   selector: 'app-specialization',
@@ -45,6 +46,18 @@ export class SpecializationComponent {
       popUp.afterClosed().subscribe(item=>{
         this.GetAll();
       })
+  }
+
+  Add(){
+    var popUp = this.dailog.open(AddSpecializationComponent,{
+      width:'400px',
+      height:'300px',
+      exitAnimationDuration:"1000ms",
+      enterAnimationDuration:"1000ms",
+    })
+    popUp.afterClosed().subscribe(item=>{
+      this.GetAll();
+    })
   }
   // Update(id:any){
   //   var popUp = this.dailog.open(UpdateDoctorComponent,{

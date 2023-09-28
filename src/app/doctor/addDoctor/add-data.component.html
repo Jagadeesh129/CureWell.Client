@@ -7,6 +7,14 @@
                   <mat-label>Doctor Name</mat-label>
                   <input matInput   formControlName="doctorName">
                 </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>specializationCode</mat-label>
+                  <input matInput   formControlName="specializationCode">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Specialization Date</mat-label>
+                  <input matInput type="date"  formControlName="SpecializationDate">
+                </mat-form-field>
                 <div>
                   <button mat-raised-button type="submit" color="primary">Add Doctor</button>
                   <a mat-raised-button style="margin:5px" color="accent" (click)="Cancel()">Cancel</a>

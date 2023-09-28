@@ -1,11 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { SurgeryService } from '../service/surgery.service';
+import { SurgeryService } from '../../service/surgery.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import { SurgeryModel } from '../model/surgeryModel';
+import { SurgeryModel } from '../../model/surgeryModel';
 import { MatTableDataSource } from '@angular/material/table';
 import { UpdateSurgeryComponent } from '../update-surgery/update-surgery.component';
 import * as alertify from 'alertifyjs';
+import { AddSurgeryComponent } from '../add-surgery/add-surgery.component';
 
 @Component({
   selector: 'app-surgery',
@@ -28,7 +29,7 @@ export class SurgeryComponent {
       this.dataSource.paginator=this.paginator;
     })
   }
-  displayedColumns: string[] = ['surgeryid','doctorid','surgeryDate','startTime','endTime','surgeryCategory','action'];
+  displayedColumns: string[] = ['surgeryid','doctorid','startTime','endTime','surgeryCategory','action'];
 
   Update(id:any){
     var popUp = this.dailog.open(UpdateSurgeryComponent,{
@@ -53,5 +54,17 @@ export class SurgeryComponent {
         alertify.success("Removed Successfully");
       })
     },function(){})
+  }
+
+  Add(){
+    var popUp = this.dailog.open(AddSurgeryComponent,{
+      width:'500px',
+      height:'400px',
+      exitAnimationDuration:"1000ms",
+      enterAnimationDuration:"1000ms",
+    })
+    popUp.afterClosed().subscribe(item=>{
+      this.GetAll();
+    })
   }
 }

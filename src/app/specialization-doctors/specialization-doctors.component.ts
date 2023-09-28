@@ -4,6 +4,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { DoctorModel } from '../model/doctorModel';
 import { MatPaginator } from '@angular/material/paginator';
+import * as alertify from 'alertifyjs';
+import { DoctorSpecializationService } from '../service/doctorSpecialization';
 
 @Component({
   selector: 'app-specialization-doctors',
@@ -11,7 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./specialization-doctors.component.css']
 })
 export class SpecializationDoctorsComponent implements OnInit{
-  constructor(private service:SpecializationService,@Inject(MAT_DIALOG_DATA) public data:any,
+  constructor(private service:DoctorSpecializationService,@Inject(MAT_DIALOG_DATA) public data:any,
   private popUp:MatDialogRef<SpecializationDoctorsComponent>){}
 
   ngOnInit():void{
@@ -19,9 +21,12 @@ export class SpecializationDoctorsComponent implements OnInit{
   }
 
   dataSource:any;
+  responseData:any;
+  name:any
 
   displayedColumns: string[] = ['id','name',];
   @ViewChild(MatPaginator) paginator !:MatPaginator;
+
   GetData(id:any){
     this.service.GetDoctors(id).subscribe(item=>{
       console.log(item);
@@ -30,4 +35,5 @@ export class SpecializationDoctorsComponent implements OnInit{
       this.dataSource.paginator=this.paginator;
     })
   }
+
 }

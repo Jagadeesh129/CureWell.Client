@@ -1,5 +1,9 @@
 <div style="width:500px;margin:auto" class="mat-elevation-z8">
-    <h1 style="margin-top:50px;">View Doctor</h1>
+  <div class="visual">
+    <h1>View Doctors</h1>
+    <button (click)="Add()">+ADD</button>
+  </div>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
     <ng-container matColumnDef="id">

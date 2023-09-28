@@ -1,5 +1,8 @@
 <div style="width:1000px;margin:auto" class="mat-elevation-z8">
-    <h1 style="margin-top:50px;">View Today's Surgery</h1>
+  <div class="visual">
+    <h1>View Today's Surgeries</h1>
+    <button (click)="Add()">+ADD</button>
+  </div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
     <ng-container matColumnDef="surgeryid">
@@ -10,11 +13,6 @@
     <ng-container matColumnDef="doctorid">
       <th mat-header-cell *matHeaderCellDef> Doctor Id </th>
       <td mat-cell *matCellDef="let element"> {{element.doctorId}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="surgeryDate">
-        <th mat-header-cell *matHeaderCellDef> Surgery Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.surgeryDate}} </td>
     </ng-container>
 
     <ng-container matColumnDef="startTime">

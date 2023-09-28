@@ -1,10 +1,21 @@
- table {
-    width: fit-content;
-  } 
-
   h1 {
     background-color: rgb(61, 60, 60);
     margin: 0;
+    margin-left:5px;
     line-height: 50px;
     color:white;
+  }
+
+  .visual{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(61, 60, 60);
+  }
+
+  .visual button{
+    background-color: rgb(61, 60, 60);
+    border: 0px solid black;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
   }
